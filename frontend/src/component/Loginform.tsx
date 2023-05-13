@@ -2,7 +2,7 @@ import { Box, Button, Heading, Input, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import '../Styles/loginform.css'
 import { Toaster, toast } from 'react-hot-toast';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 type LoginCredentials = {
     email: string;
@@ -15,6 +15,7 @@ const LoginPage: React.FC = () => {
         password: '',
     });
     const [error, setError] = useState<string>('');
+    const navigate=useNavigate()
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
@@ -51,7 +52,8 @@ const LoginPage: React.FC = () => {
                 const data = await response.json();
                 console.log('Login successful:', data);
                 toast.success("Login Successful..!!")
-                return <Navigate to={"/"}/>
+                // return <Navigate to={"/"}/>
+                navigate("/")
             } else {
                 // Login failed
                 const errorData = await response.json();

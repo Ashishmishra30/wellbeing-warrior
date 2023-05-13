@@ -2,6 +2,7 @@ import { Box, Button, Heading, Input, Select, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import '../Styles/loginform.css'
 import { Toaster, toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 
 type SignupData = {
@@ -31,6 +32,7 @@ const SignupPage: React.FC = () => {
         workout: ''
     });
     const [error, setError] = useState<string>('');
+    const navigate=useNavigate()
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = event.target;
@@ -67,6 +69,7 @@ const SignupPage: React.FC = () => {
                 const data = await response.json();
                 console.log('Signup successful:', data);
                 toast.success("Registration Successful..!!")
+                navigate("/login")
             } else {
                 // Signup failed
                 const errorData = await response.json();
