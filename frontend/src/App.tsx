@@ -1,7 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Home from './Pages/Home';
+
+import Login from './Pages/Login'; 
+import Signup from './Pages/Signup';
+
+import HeroSection from './Pages/DashTop';
+import Card from './Card/User';
+import Dash from './Pages/Dashboard';
+
 
 function App() {
   return (
@@ -10,5 +17,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

@@ -1,0 +1,76 @@
+.logincontainer {
+    width: 130%;
+    /* margin:  auto 10rem auto 0rem ; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 3rem;
+    margin-top: 6rem;
+    position: relative;
+    right: 30rem;
+    background-color: teal;
+}
+
+.loginpage {
+    justify-content: space-evenly;
+    background-image: url("https://s1.1zoom.me/b5050/147/Fitness_Handbag_Jump_Colored_background_600380_1920x1080.jpg");
+    height: 120vh;
+
+}
+
+.labels{
+    /* color: green; */
+    font-size: 25px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.button{
+    margin-top: 2%;
+    color-scheme: black;
+}
+
+.inputs{
+    border: 2px solid black;
+    background-color: white;
+}
+
+.heading{
+    background-color: black;
+    color: #ffdc60;
+    width: 50%;
+    margin: auto;
+}
+
+/* signup page css  */
+
+.signupcontainer{
+    width: 40%;
+    padding: 2%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+
+.signuplabels{
+    font-size: 20px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+@media (max-width:1320px){
+  .logincontainer{
+    /* width: 100%; */
+    right: 10rem;
+    }
+
+    .loginpage{
+        /* background-image: none; */
+        background-color: #ffdc60;
+    }
+}
+
+@media (max-width:650px){
+   .logincontainer{
+    width: 100%;
+    right: 0rem;
+   }
+}
