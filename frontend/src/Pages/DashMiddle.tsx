@@ -111,6 +111,7 @@ const[status,setstatus]=useState(false)
           </ModalFooter>
         </ModalContent>
       </Modal>
+      
 </SimpleGrid>
 
 </Box>
