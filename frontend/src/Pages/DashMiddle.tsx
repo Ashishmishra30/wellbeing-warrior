@@ -39,7 +39,11 @@ import {
   import {useState} from 'react'
 import { log } from 'console'
 import But from '../component/but'
+import BasicTable from './Table'
+import {useContext} from 'react'
+import { AuthContext } from "../Context/Context";
 const Dashboard2 = () => {
+  const {State}=useContext(AuthContext)
 const[num,setnum]=useState('')
 const[type,settype]=useState('')
 const[status,setstatus]=useState(false)
@@ -150,6 +154,7 @@ const[status,setstatus]=useState(false)
             </Box>
       </SimpleGrid>
         </Box>
+         {State.show && <BasicTable/>}
     </>
   )
 }
