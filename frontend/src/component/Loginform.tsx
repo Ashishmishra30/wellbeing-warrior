@@ -1,15 +1,17 @@
 import { Box, Button, Heading, Input, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import '../Styles/loginform.css'
+import { Toaster, toast } from 'react-hot-toast';
+import { Navigate } from 'react-router-dom';
 
 type LoginCredentials = {
-    username: string;
+    email: string;
     password: string;
 };
 
 const LoginPage: React.FC = () => {
     const [credentials, setCredentials] = useState<LoginCredentials>({
-        username: '',
+        email: '',
         password: '',
     });
     const [error, setError] = useState<string>('');
@@ -28,14 +30,15 @@ const LoginPage: React.FC = () => {
 
         console.log(credentials)
         // Perform client-side validation
-        if (!credentials.username || !credentials.password) {
+        if (!credentials.email || !credentials.password) {
             setError('Please enter both username and password');
             return;
         }
 
         try {
             // Make POST request to the server
-            const response = await fetch('/api/login', {
+            const response = await fetch('https://hackthon.onrender.com/api/users/login', {
+                // mode: 'no-cors',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -47,30 +50,36 @@ const LoginPage: React.FC = () => {
                 // Successful login
                 const data = await response.json();
                 console.log('Login successful:', data);
+                toast.success("Login Successful..!!")
+                return <Navigate to={"/"}/>
             } else {
                 // Login failed
                 const errorData = await response.json();
                 setError(errorData.message);
+                toast.error('An error occurred while signing up')
             }
         } catch (error) {
             console.error('An error occurred:', error);
             setError('An error occurred while logging in');
+            toast.error('An error occurred while signing up')
         }
     };
 
     return (
+        <>
+        <Toaster/>
         <Box className='logincontainer'>
             <Box><Heading className='loginheading'>Sign In</Heading></Box>
             {error && <p>{error}</p>}
             <form onSubmit={handleSubmit}>
                 <Box>
-                    <Text className='labels'>Username:</Text>
+                    <Text className='labels'>Email:</Text>
                     <Input
                         className='inputs'
                         placeholder='Enter Username'
                         type="text"
-                        name="username"
-                        value={credentials.username}
+                        name="email"
+                        value={credentials.email}
                         onChange={handleInputChange}
                     />
                 </Box>
@@ -88,6 +97,7 @@ const LoginPage: React.FC = () => {
                 <Button backgroundColor={"black"} marginTop={"5%"} color={"#ffdc10"} type="submit">Sign In</Button>
             </form>
         </Box>
+        </>
     );
 };
 

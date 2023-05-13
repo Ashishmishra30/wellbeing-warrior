@@ -1,6 +1,7 @@
 import { Box, Button, Heading, Input, Select, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import '../Styles/loginform.css'
+import { Toaster, toast } from 'react-hot-toast';
 
 
 type SignupData = {
@@ -14,6 +15,8 @@ type SignupData = {
     active: string,
     workout: string
 };
+
+//
 
 const SignupPage: React.FC = () => {
     const [signupData, setSignupData] = useState<SignupData>({
@@ -50,7 +53,8 @@ const SignupPage: React.FC = () => {
 
         try {
             // Make POST request to the server
-            const response = await fetch('/api/signup', {
+            const response = await fetch('https://hackthon.onrender.com/api/users/register', {
+                // mode: 'no-cors',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,14 +66,18 @@ const SignupPage: React.FC = () => {
                 // Successful signup
                 const data = await response.json();
                 console.log('Signup successful:', data);
+                toast.success("Registration Successful..!!")
             } else {
                 // Signup failed
                 const errorData = await response.json();
+                console.log(errorData)
                 setError(errorData.message);
+                toast.error("errorData.message")
             }
         } catch (error) {
             console.error('An error occurred:', error);
             setError('An error occurred while signing up');
+            toast.error('An error occurred while signing up')
         }
 
         setSignupData({
@@ -86,6 +94,8 @@ const SignupPage: React.FC = () => {
     };
 
     return (
+        <>
+         <Toaster/>
         <Box className='signupcontainer'>
             <Heading className='heading'>Signup</Heading>
             {error && <p>{error}</p>}
@@ -186,6 +196,7 @@ const SignupPage: React.FC = () => {
                 <Button backgroundColor={"black"} marginTop={"5%"} color={"#ffdc10"} type="submit">Sign Up</Button>
             </form>
         </Box>
+        </>
     );
 };
 
