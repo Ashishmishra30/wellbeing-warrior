@@ -203,7 +203,11 @@ const Home = () => {
     <Milestones/>
     
 
+<<<<<<< HEAD
         
+=======
+       
+>>>>>>> 74e3c5b85f9e185348d43627106a78e8cb8e7201
 
     </div>
   )

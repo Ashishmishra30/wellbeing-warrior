@@ -48,29 +48,29 @@ const SignupPage: React.FC = () => {
         }
         console.log(signupData)
 
-        // try {
-        //     // Make POST request to the server
-        //     const response = await fetch('/api/signup', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify(signupData),
-        //     });
+        try {
+            // Make POST request to the server
+            const response = await fetch('/api/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(signupData),
+            });
 
-        //     if (response.ok) {
-        //         // Successful signup
-        //         const data = await response.json();
-        //         console.log('Signup successful:', data);
-        //     } else {
-        //         // Signup failed
-        //         const errorData = await response.json();
-        //         setError(errorData.message);
-        //     }
-        // } catch (error) {
-        //     console.error('An error occurred:', error);
-        //     setError('An error occurred while signing up');
-        // }
+            if (response.ok) {
+                // Successful signup
+                const data = await response.json();
+                console.log('Signup successful:', data);
+            } else {
+                // Signup failed
+                const errorData = await response.json();
+                setError(errorData.message);
+            }
+        } catch (error) {
+            console.error('An error occurred:', error);
+            setError('An error occurred while signing up');
+        }
 
         setSignupData({
             username: '',
@@ -94,6 +94,7 @@ const SignupPage: React.FC = () => {
                     <Text className='signuplabels'>Name:</Text>
                     <Input
                         type="text"
+                        className='inputs'
                         placeholder='Enter Fullname'
                         name="username"
                         value={signupData.username}
@@ -104,6 +105,7 @@ const SignupPage: React.FC = () => {
                     <Text className='signuplabels'>Email:</Text>
                     <Input
                         type="email"
+                        className='inputs'
                         placeholder='Enter Email'
                         name="email"
                         value={signupData.email}
@@ -114,6 +116,7 @@ const SignupPage: React.FC = () => {
                     <Text className='signuplabels'>Password:</Text>
                     <Input
                         type="password"
+                        className='inputs'
                         placeholder='Enter Password'
                         name="password"
                         value={signupData.password}
@@ -132,6 +135,7 @@ const SignupPage: React.FC = () => {
                     <Text className='signuplabels'>Height:</Text>
                     <Input
                         type="text"
+                        className='inputs'
                         name="height"
                         placeholder='Enter Height In cms'
                         value={signupData.height}
@@ -142,6 +146,7 @@ const SignupPage: React.FC = () => {
                     <Text className='signuplabels'>Weight:</Text>
                     <Input
                         type="text"
+                        className='inputs'
                         placeholder='Enter Weight In kgs'
                         name="weight"
                         value={signupData.weight}
@@ -153,6 +158,8 @@ const SignupPage: React.FC = () => {
                     <Input
                         type="text"
                         name="age"
+                        className='inputs'
+                        placeholder='Enter Your Age'
                         value={signupData.age}
                         onChange={handleInputChange}
                     />
@@ -176,7 +183,7 @@ const SignupPage: React.FC = () => {
                         <option value="morethan5">more than 5</option>
                     </Select>
                 </Box>
-                <Button type="submit">Sign Up</Button>
+                <Button backgroundColor={"black"} marginTop={"5%"} color={"#ffdc10"} type="submit">Sign Up</Button>
             </form>
         </Box>
     );
