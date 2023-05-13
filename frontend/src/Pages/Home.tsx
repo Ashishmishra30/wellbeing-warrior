@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { Fragment } from 'react'
 
 import {
@@ -27,17 +27,16 @@ import { Navbar } from '../component/Navbar'
 import { ImQuotesLeft } from 'react-icons/im';
 import {Footer} from '../component/Footer';
 import Milestones from '../component/Timeline';
-=======
-import React from 'react'
-import { Navbar } from '../component/Navbar';
+
+
 import Bmi from './BmiCalculator/Bmi';
 
->>>>>>> 8d59917e1dd03ea3724fe138b82c00f2dc06be8a
+
 // nhi krna
 const Home = () => {
   return (
     <div>
-<<<<<<< HEAD
+
        
         
         <Container maxW="6xl" px={{ base: 6, md: 3 }} py={24}>
@@ -203,10 +202,10 @@ const Home = () => {
     </Container>
     <Milestones/>
     <Footer/>
-=======
+
         <Navbar/>
         <Bmi/>
->>>>>>> 8d59917e1dd03ea3724fe138b82c00f2dc06be8a
+
     </div>
   )
 }

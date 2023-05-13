@@ -81,7 +81,7 @@ export const Navbar=()=> {
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
-            href={'#'}>
+            href={'/login'}>
             Sign In
           </Button>
           <Button
@@ -91,7 +91,7 @@ export const Navbar=()=> {
             fontWeight={600}
             color={'white'}
             bg={'pink.400'}
-            href={'#'}
+            href={'/register'}
             _hover={{
               bg: 'pink.300',
             }}>
@@ -291,10 +291,10 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Dashboard',
-    href: '#',
+    href: '/dashboard',
   },
   {
-    label: 'Blog',
-    href: '#',
+    label: 'BMI',
+    href: '/bmi',
   },
 ];
