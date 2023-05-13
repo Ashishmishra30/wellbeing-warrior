@@ -15,18 +15,17 @@ import {
 import { FaGithub } from 'react-icons/fa';
 
 import Card from '../Card/User';
-
+import HeroPage from '../Images/heropage.png'
 const HeroSection: React.FC = () => {
   return (
     <Stack
       p={{ base: 5, md: 1 }}
       direction={{ base: 'column', md: 'row' }}
-      bgImage={{
-        base: 'none',
-        md: 'url(https://x207l.csb.app/images/heropage.png)'
+      bgImage={
+    HeroPage
        
         
-      }}
+      }
       backgroundSize="800px"
       backgroundPosition="bottom right"
       backgroundRepeat="no-repeat"

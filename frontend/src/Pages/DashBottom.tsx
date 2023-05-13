@@ -1,5 +1,6 @@
 import React from 'react'
 import {FaHeart} from 'react-icons/fa'
+import section from '../Images/section.png'
 import {
     chakra,
     Stack,
@@ -21,7 +22,7 @@ const Dash3 = () => {
     <>
       <Box w="100%" h="auto">
       <SimpleGrid margin="auto" columns={{ sm: 1, md: 2, lg:2 }} p="50px" >
-<Box w="100%"   _hover={{cursor: "pointer" }}><Image p="20px" w="100%" src="https://x207l.csb.app/images/section5.png"/></Box>
+<Box w="100%"   _hover={{cursor: "pointer" }}><Image p="20px" w="100%" src={section}/></Box>
 <Box w="100%"  p="20px"  _hover={{cursor: "pointer" }}>
     <Heading textAlign="left"  color='#373636'
    >We Will Take Care Of Your Fitness Goals</Heading>
