@@ -5,6 +5,7 @@ import Bmi from '../Pages/BmiCalculator/Bmi'
 import Dash from '../Pages/Dashboard'
 import Login from '../Pages/Login'
 import Signup from '../Pages/Signup'
+import Error from '../component/Error'
 
 const Allroutes = () => {
   return (
@@ -14,6 +15,7 @@ const Allroutes = () => {
         <Route path="/dashboard" element={<Dash/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Signup/>}/>
+        <Route path="*" element={<Error/>}/>
     </Routes>
   )
 }
