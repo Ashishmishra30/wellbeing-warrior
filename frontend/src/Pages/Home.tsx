@@ -203,7 +203,6 @@ const Home = () => {
     <Milestones/>
     
 
-       
 
     </div>
   )
