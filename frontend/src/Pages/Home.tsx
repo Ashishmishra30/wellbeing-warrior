@@ -201,10 +201,9 @@ const Home = () => {
       </Flex>
     </Container>
     <Milestones/>
-    <Footer/>
+    
 
-        <Navbar/>
-        <Bmi/>
+       
 
     </div>
   )
