@@ -60,13 +60,14 @@ const LoginPage: React.FC = () => {
 
     return (
         <Box className='logincontainer'>
-            <Box><Heading className='heading'>Sign In</Heading></Box>
+            <Box><Heading className='loginheading'>Sign In</Heading></Box>
             {error && <p>{error}</p>}
             <form onSubmit={handleSubmit}>
                 <Box>
                     <Text className='labels'>Username:</Text>
                     <Input
                         className='inputs'
+                        placeholder='Enter Username'
                         type="text"
                         name="username"
                         value={credentials.username}
@@ -77,6 +78,7 @@ const LoginPage: React.FC = () => {
                     <Text className='labels'>Password:</Text>
                     <Input
                         className='inputs'
+                        placeholder='Enter Password'
                         type="password"
                         name="password"
                         value={credentials.password}
