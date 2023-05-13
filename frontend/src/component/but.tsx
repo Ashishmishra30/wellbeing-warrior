@@ -30,13 +30,23 @@ import {
 useDisclosure
   } from '@chakra-ui/react'
   import {BsPlusCircle} from 'react-icons/bs'
+  import {useContext} from 'react'
+import { AuthContext } from "../Context/Context";
+  
 const But = () => {
+    const {State,getQut}=useContext(AuthContext)
     const[mill,setmill]=useState('')
     const[food,setfood]=useState('')
     const[Qut,setQut]=useState('')
     const { isOpen, onOpen, onClose } = useDisclosure()
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
+         
+//    const getqut=()=>{
+        
+//         return Qut
+//     }
+    console.log("ooo",State)
   return (
     <>
     <Toaster/>
@@ -63,11 +73,10 @@ const But = () => {
               <select onChange={(e)=>setfood(e.target.value)} value={food}    style={{width:'100%',fontSize:'20px',paddingLeft:"20px",marginTop:"30px"}}>
                 <option value="">Select Food</option>
                 <option value="Chapati">Chapati</option>
-                <option value="rice">rice</option>
-                <option value="vegetables">vegetables</option>
-                <option value="protein">protein</option>
-                <option value="fruits">fruits</option>
-                <option value="protein">protein</option>
+                <option value="Rice">Rice</option>
+                <option value="Vegetables">Vegetables</option>
+                        <option value="Fruits">Fruits</option>
+                <option value="Protein">Protein</option>
             </select>
             </FormControl>
 
@@ -83,6 +92,8 @@ const But = () => {
                 setQut('')
                 setmill('')
                 setfood('')
+                getQut(Qut,food)
+             
                 toast.success("Saved..!!")
                 console.log(mill,food,Qut)
                 }}    colorScheme='blue' mr={3}>

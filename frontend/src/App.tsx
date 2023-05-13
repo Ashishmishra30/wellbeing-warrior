@@ -11,6 +11,7 @@ import Dash from './Pages/Dashboard';
 import Allroutes from './MainRoutes/Allroutes';
 import { Navbar } from './component/Navbar';
 import { Footer } from './component/Footer';
+import BasicTable from './Pages/Table';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Navbar/>
       <Allroutes/>
       <Footer/>
+    
 
     </div>
   );
