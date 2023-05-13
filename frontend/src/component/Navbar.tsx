@@ -16,6 +16,7 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
+    Image,
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
@@ -56,12 +57,13 @@ export const Navbar=()=> {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            Logo
-          </Text>
+          
+          <Image
+            alt="dev logo"
+            w={'auto'}
+            h={8}
+            src='https://i.postimg.cc/fLNmbPMh/stay-fit-logo.png'
+          />
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
@@ -74,6 +76,7 @@ export const Navbar=()=> {
           direction={'row'}
           spacing={6}>
           <Button
+          
             as={'a'}
             fontSize={'sm'}
             fontWeight={400}
