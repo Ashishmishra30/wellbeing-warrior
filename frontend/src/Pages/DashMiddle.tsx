@@ -38,11 +38,13 @@ import {
   import "react-circular-progressbar/dist/styles.css";
   import {useState} from 'react'
 import { log } from 'console'
+import But from '../component/but'
 const Dashboard2 = () => {
 const[num,setnum]=useState('')
 const[type,settype]=useState('')
 const[status,setstatus]=useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const [model,setmodel]=useState(false)
 
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
@@ -65,7 +67,7 @@ const[status,setstatus]=useState(false)
 <Box w="50%" margin="auto" mt="20px" gap="20px"  >
 <SimpleGrid margin="auto" columns={{ sm: 1, md: 2, lg:2 }}  >
     <Box  w='100%' paddingLeft='20px' paddingTop='20px' ><Box _hover={{  transform: "scale(1.2)", transition: "all .3s", cursor: "pointer" }} onClick={onOpen}><BsPlusCircle  size={120} color='#45B39D'  /></Box><Text ml='-15%' color='#45B39D' mt="25px" fontSize={20} fontWeight={500}>Add Exercise</Text></Box>
-    <Box w='100%'  paddingLeft='20px' paddingTop='20px' ><Box _hover={{  transform: "scale(1.2)", transition: "all .3s", cursor: "pointer" }} ><BsPlusCircle size={120} color='#F1C40F'/></Box><Text ml='-15%' color='#F1C40F'mt="25px" fontSize={20} fontWeight={500}>Add Food</Text></Box>
+    {/* <Box w='100%'  paddingLeft='20px' paddingTop='20px' ><Box _hover={{  transform: "scale(1.2)", transition: "all .3s", cursor: "pointer" }} onClick={onOpen}><BsPlusCircle size={120} color='#F1C40F'/></Box><Text ml='-15%' color='#F1C40F'mt="25px" fontSize={20} fontWeight={500}>Add Food</Text></Box> */}
    
 
       <Modal
@@ -106,11 +108,12 @@ const[status,setstatus]=useState(false)
             </Button>
             <Button onClick={()=>{
                 onClose()
-                toast.error("Not Added")
+                toast.error("Cancled")
             }}>Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
+<But/>
       
 </SimpleGrid>
 
