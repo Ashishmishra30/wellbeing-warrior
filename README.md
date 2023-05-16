@@ -23,6 +23,7 @@
 - TypeScript
 - font-awesome
 - Tailwind css
+- cors
 - react-router-dom
 - better-react-carousel
 - Mongoose
