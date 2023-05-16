@@ -136,11 +136,11 @@ const[status,setstatus]=useState(false)
         </Box>
         <Box mt='15px' display='flex'  justifyContent='space-evenly' bg='#FADBD8' gap='40px' >
         <Text color='#566573' fontSize={22} fontWeight={600}>{status && type}</Text>
-        <Text color='#566573' fontSize={22} fontWeight={600}>0</Text>
+        <Text color='#566573' fontSize={22} fontWeight={600}>1680</Text>
         <Text color='#566573' fontSize={22} fontWeight={600}></Text>
         <Text color='#566573' fontSize={22} fontWeight={600}>{status? +num*10:0}</Text>
         <Text color='#566573' fontSize={22} fontWeight={600}></Text>
-        <Text color='#566573' fontSize={22} fontWeight={600}>{status? +num*10:0}</Text>
+        <Text color='#566573' fontSize={22} fontWeight={600}>{status?1680- +num*10:0}</Text>
         </Box>
         
     </Box>
