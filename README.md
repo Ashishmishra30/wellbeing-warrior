@@ -25,7 +25,8 @@
 - Tailwind css
 - cors
 - react-router-dom
-- better-react-carousel
+- react-bootstrap
+- react-hot-toast
 - Mongoose
 
 <h2>Features</h2>
