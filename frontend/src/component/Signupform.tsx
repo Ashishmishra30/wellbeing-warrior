@@ -32,7 +32,7 @@ const SignupPage: React.FC = () => {
         workout: ''
     });
     const [error, setError] = useState<string>('');
-    const navigate=useNavigate()
+
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = event.target;
@@ -70,6 +70,7 @@ const SignupPage: React.FC = () => {
                 console.log('Signup successful:', data);
                 toast.success("Registration Successful..!!")
                 localStorage.setItem("username",(signupData.username))
+                navigate('/login')
             } else {
                 // Signup failed
                 const errorData = await response.json();
@@ -95,7 +96,7 @@ const SignupPage: React.FC = () => {
             workout: ''
         })
     };
-
+    const navigate=useNavigate()
     return (
         <>
          <Toaster/>

@@ -2,7 +2,7 @@ import { Box, Button, Heading, Input, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import '../Styles/loginform.css'
 import { Toaster, toast } from 'react-hot-toast';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import {useContext} from 'react'
 import { AuthContext } from "../Context/Context";
 type LoginCredentials = {
@@ -11,6 +11,7 @@ type LoginCredentials = {
 };
 
 const LoginPage: React.FC = () => {
+    const navigate=useNavigate()
     const {State,getQut,login}=useContext(AuthContext)
     console.log("auth",State.auth)
     const [credentials, setCredentials] = useState<LoginCredentials>({
@@ -57,7 +58,7 @@ const LoginPage: React.FC = () => {
                 console.log('Login successful:', data);
                 toast.success("Login Successful..!!")
             
-                return <Navigate to={"/"}/>
+                navigate('/')
             } else {
                 // Login failed
                 const errorData = await response.json();
